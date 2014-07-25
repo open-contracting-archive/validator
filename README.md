@@ -32,11 +32,10 @@ The bootstrap.py command sets up a virtualenv for us:
     $ ./bootstrap.py
 
 Now we use the deploy command to do the following:
-* sets up our sql database for the first time including creating a new username
-  and password (this is why deploy wants your mysql root password)
+
+* sets up our sql database for the first time including creating a new username and password (this is why deploy wants your mysql root password)
 * links to the correct local settings files
-* does other deploy things (which are generally more relevant when deploying to
-  server - building webassets etc.
+* does other deploy things (which are generally more relevant when deploying to server - building webassets etc.
 
     $ ./tasks.py deploy:dev
 
