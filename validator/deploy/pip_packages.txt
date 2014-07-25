@@ -25,7 +25,7 @@ django-debug-toolbar
 
 # CSS and assets
 django-assets==0.10
-webassets==0.10.1
+webassets==0.10.0
 pyScss==1.2.0.post3
 cssmin==0.2.0
 argparse==1.2.1
