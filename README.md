@@ -1,13 +1,20 @@
-validator
-=========
-Small web application for validating ocds data
+This is a small web application to provide a front-end interface to validate
+whether ocds-formatted data is ocds compliant.
 
 Requirements
 ============
-Installation has been tested on an ubuntu machine. You will need:
+You will need:
+* git
 * pip
 * MySQL
 
+Installation on Ubuntu 14.04. 
+
+    $ sudo apt-get install git python-pip python-dev mysql-server libmysqlclient-dev 
+
+There maybe problems running the dye commands on OSX, this hasn't been tested.
+
+I doubt this will work on windows, but would be pleased to hear otherwise.
 
 Install
 =======
