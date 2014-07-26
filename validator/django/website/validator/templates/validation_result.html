@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+	<h1>Validation results</h1>
+	<h2>Status</h2>
+		{% if status == 'validation-error' %}
+			<span class="label label-error">Validation Error</span>
+			<p>Validation error:</p>
+			<pre>{{ error }}</pre>
+		{% endif %}
+	<h2>Input</h2>
+	<pre>{{ content }}</pre>
+</div>
+{% endblock %}
