@@ -17,7 +17,7 @@ django-registration==1.0
 pytest-django
 django-dynamic-fixture
 mock
-
+factory_boy
 
 # development
 django-extensions
