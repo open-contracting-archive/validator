@@ -11,7 +11,11 @@ class TextFormValidatorView(FormView):
     template_name = "homepage.html"
 
     def form_valid(self, form):
-        content = form.cleaned_data.get('content')
+        if self.request.FILES.get('file'):
+            content = self.request.FILES['file'].read()
+        else:
+            content = form.cleaned_data.get('content')
+
         status, error = validate_against_schema(raw_data=content)
 
         return render(self.request, "validation_result.html",

@@ -6,7 +6,8 @@ from crispy_forms.layout import Submit
 
 
 class TextValidatorForm(forms.Form):
-    content = forms.CharField(widget=forms.Textarea)
+    content = forms.CharField(widget=forms.Textarea, required=False)
+    file = forms.FileField(required=False)
 
     def __init__(self, *args, **kwargs):
         super(TextValidatorForm, self).__init__(*args, **kwargs)

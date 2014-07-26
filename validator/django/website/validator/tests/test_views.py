@@ -21,3 +21,11 @@ def test_form_valid_input(rf):
     view = TextFormValidatorView.as_view()
     response = view(request)
     assert 'Successfully Validated Input JSON' in response.content
+
+
+def test_form_upload_file(rf):
+    with open('validator/tests/assets/simple_example.json') as fp:
+        request = rf.post('/', {'file': fp})
+    view = TextFormValidatorView.as_view()
+    response = view(request)
+    assert 'Successfully Validated Input JSON' in response.content
