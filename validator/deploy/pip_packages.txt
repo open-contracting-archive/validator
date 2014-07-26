@@ -17,7 +17,6 @@ django-registration==1.0
 pytest-django
 django-dynamic-fixture
 mock
-factory_boy
 
 # development
 django-extensions
@@ -31,4 +30,4 @@ cssmin==0.2.0
 argparse==1.2.1
 
 # validator
-json-schema-validator>=2.3.1
+jsonschema>=2.3.0
