@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
 from validator.views import TextFormValidatorView
+import pytest
 
-
-def test_form_text_input(rf):
-    request = rf.post('/', {'content': '{"data": []}'})
-    view = TextFormValidatorView.as_view()
-    response = view(request)
+@pytest.mark.client
+def test_form_text_input(rf, client):
+    response = client.post('/', {'content': '{"data": []}'})
     assert 'Validation results' in response.content, "Form didn't validate"
 
 
