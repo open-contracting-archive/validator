@@ -13,12 +13,14 @@ Installation on Ubuntu 14.04.
     $ sudo apt-get install git python-pip python-dev mysql-server libmysqlclient-dev 
     $ sudo pip install virtualenv
 
+Installation on OSX 10.8 with homebrew:
+    $ brew install git python mysql
+    $ pip install virtualenv
+
 
 Install
 =======
-This has been tested on Ubuntu 14.04.
-There maybe problems running the install commands on OSX, this hasn't been tested.
-I doubt this will work on windows, but would be pleased to hear otherwise.
+This has been tested on Ubuntu 14.04 & OSX 10.8.
 
 The whole application runs inside a virtualenv, but you do not have to manage
 it yourself, the [dye](https://github.com/aptivate/dye) commands handle this for you.
