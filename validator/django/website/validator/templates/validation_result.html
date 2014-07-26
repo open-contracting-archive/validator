@@ -10,6 +10,7 @@
             {% for e in error %}
                 <pre>{{ e.message }}</pre>
             {% endfor %}
+            <p>(showing only first 100)</p>
         {% elif status == 'input-error' %}
             <span class="label label-error">Input Error</span>
             <p>Invalid JSON Input:</p>

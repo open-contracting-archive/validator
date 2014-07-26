@@ -17,8 +17,10 @@ def validate_against_schema(schema_name="release-schema", raw_data=""):
         return status, error
     
     error_list = []
-    for e in validator(schema).iter_errors(data):
+    for n, e in enumerate(validator(schema).iter_errors(data)):
         error_list.append(e)
+        if n >= 100:
+            break
     
     if error_list:
         status = 'validation-error'
