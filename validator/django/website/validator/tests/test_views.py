@@ -13,4 +13,11 @@ def test_form_invalid_json(rf):
     request = rf.post('/', {'content': '{invalid json;'})
     view = TextFormValidatorView.as_view()
     response = view(request)
-    assert 'Invalid JSON Input' in response.content, "Form didn't validate"
+    assert 'Invalid JSON Input' in response.content, "Form didn't raise invalid JSON error"
+
+
+def test_form_valid_input(rf):
+    request = rf.post('/', {'content': open('validator/tests/assets/simple_example.json').read()})
+    view = TextFormValidatorView.as_view()
+    response = view(request)
+    assert 'Successfully Validated Input JSON' in response.content

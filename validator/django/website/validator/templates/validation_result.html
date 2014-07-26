@@ -12,6 +12,9 @@
             <span class="label label-error">Input Error</span>
             <p>Invalid JSON Input:</p>
             <pre>{{ error }}</pre>
+        {% elif status == 'input-valid' %}
+            <span class="label label-success">Successfully Validated Input JSON</span>
+            <p>Input passed all of the schema checks.</p>
         {% endif %}
     
     <h2>Input</h2>
