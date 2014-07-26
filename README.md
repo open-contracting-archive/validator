@@ -14,6 +14,7 @@ Installation on Ubuntu 14.04.
     $ sudo pip install virtualenv
 
 Installation on OSX 10.8 with homebrew:
+
     $ brew install git python mysql
     $ pip install virtualenv
 
