@@ -1,7 +1,6 @@
 import json
 
-from jsonschema import validate
-from jsonschema.exceptions import ValidationError
+from jsonschema.validators import Draft4Validator as validator
 
 
 def validate_against_schema(schema_name="release-schema", raw_data=""):
@@ -17,12 +16,12 @@ def validate_against_schema(schema_name="release-schema", raw_data=""):
         error = e
         return status, error
     
-    try:
-        validate(data, schema)
-    except ValidationError, e:
+    error_list = []
+    for e in validator(schema).iter_errors(data):
+        error_list.append(e)
+    
+    if error_list:
         status = 'validation-error'
-        error = e
-
-        return status, error
+        return status, error_list
 
     return status, error

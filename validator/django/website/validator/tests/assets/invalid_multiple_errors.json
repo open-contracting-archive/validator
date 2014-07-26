@@ -1,0 +1,105 @@
+{
+    "releases": [
+        {
+            "releaseMeta": {
+                "locale": "English"
+            }
+        },
+        {
+            "releaseMeta": {
+                "locale": "French",
+                "ocid": "PW-$KIN-650-6155"
+            }
+        },
+        {
+            "releaseMeta": {
+                "locale": "English",
+                "ocid": "PW-$VIC-242-6289"
+            }
+        },
+        {
+            "releaseMeta": {
+                "locale": "French",
+                "ocid": "PW-$VIC-242-6289"
+            }
+        },
+        {
+            "releaseMeta": {
+                "locale": "English",
+                "ocid": "PW-$$XL-122-26346"
+            }
+        },
+        {
+            "releaseMeta": {
+                "locale": "French",
+                "ocid": "PW-$$XL-122-26346"
+            }
+        },
+        {
+            "releaseMeta": {
+                "locale": "English",
+                "ocid": "PW-$$ZL-106-26343"
+            }
+        },
+        {
+            "releaseMeta": {
+                "locale": "French",
+                "ocid": "PW-$$ZL-106-26343"
+            }
+        },
+        {
+            "releaseMeta": {
+                "locale": "English",
+                "ocid": "PW-13-00384952"
+            }
+        },
+        {
+            "releaseMeta": {
+                "locale": "French",
+                "ocid": "PW-13-00384952"
+            }
+        },
+        {
+            "releaseMeta": {
+                "locale": "English",
+                "ocid": "PW-13-00360880"
+            }
+        },
+        {
+            "releaseMeta": {
+                "locale": "French",
+                "ocid": "PW-13-00360880"
+            }
+        },
+        {
+            "releaseMeta": {
+                "locale": "English",
+                "ocid": "PW-13-00495607"
+            }
+        },
+        {
+            "releaseMeta": {
+                "locale": "French",
+                "ocid": "PW-13-00495607"
+            }
+        },
+        {
+            "releaseMeta": {
+                "locale": "English",
+                "ocid": "PW-$$EJ-436-26154"
+            }
+        },
+        {
+            "releaseMeta": {
+                "locale": "French",
+                "ocid": "PW-$$EJ-436-26154"
+            }
+        },
+        {
+            "releaseMeta": {
+                "locale": "English",
+                "ocid": "PW-$$HL-653-63222"
+            }
+        }
+    ]
+}
