@@ -15,4 +15,4 @@ class TextFormValidatorView(FormView):
         status, error = validate_against_schema(raw_data=content)
 
         return render(self.request, "validation_result.html",
-                    {"content": content, "status": status, "error": error})
+                    {"status": status, "error": error})
