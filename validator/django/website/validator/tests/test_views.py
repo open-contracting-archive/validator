@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 from validator.views import TextFormValidatorView
 import pytest
-import responses
 
-from mock import Mock, patch
+from mock import patch
+
 
 @pytest.mark.client
 def test_form_text_input(rf, client):
