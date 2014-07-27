@@ -368,3 +368,4 @@ else:
 
 
 ########## Your stuff: Below this line define 3rd party libary settings
+CRISPY_TEMPLATE_PACK = 'bootstrap'

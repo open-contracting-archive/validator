@@ -1,0 +1,31 @@
+{% extends "base.html" %}{% load crispy_forms_tags %}
+
+{% block content %}
+<style type="text/css">
+	#id_content {
+		width: 100%;
+		height: 100px;
+	}
+
+	#id_file {
+		margin-bottom: 28px;
+	}
+
+	#id_url {
+		width: 100%;
+	}
+</style>
+
+<div class="row">
+	<div class="col-sm-12">
+	<h1>About</h1>
+	<p>This is a small web application to provide a front-end interface to validate whether ocds-formatted data is ocds compliant.</p>
+	<p>Submit the data through <strong>File upload</strong>, <strong>External URL</strong> or <strong>Text input</strong>. Only one input type at time will be validated.</p>
+</div>
+
+<div class="row">
+	<div class="col-sm-12">
+		{% crispy form %}
+	</div>
+</div>
+{% endblock %}

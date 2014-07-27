@@ -1,15 +1,16 @@
 from django.conf.urls import patterns, include, url
-from django.conf.urls.i18n import i18n_patterns
 from django.views.generic.base import RedirectView
 
 from django.contrib import admin
 from django.conf import settings
 admin.autodiscover()
 
+from validator.views import TextFormValidatorView
+
 urlpatterns = patterns('',
     # Examples:
-    # url(r'^$', 'myapp.views.home', name='home'),
     # url(r'^myapp/', include('myapp.urls')),
+    url(r'^$', TextFormValidatorView.as_view(), name='home'),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
@@ -21,7 +22,7 @@ urlpatterns = patterns('',
     # The apache conf is set up to do this for you, but you will need to do it
     # on dev
     (r'^favicon.ico$', RedirectView.as_view(url='{0}images/favicon.ico'.format(settings.STATIC_URL))),
-) 
+)
 
 if settings.DEBUG:
     urlpatterns = patterns('',
