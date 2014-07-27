@@ -33,7 +33,7 @@ def test_form_upload_file(rf):
     assert 'Successfully Validated Input JSON' in response.content
 
 
-def test_form_remote_url_success(rf, monkeypatch):
+def test_form_remote_url_success(rf):
     with patch('validator.views.requests') as mock_requests:
         mock_response = mock_requests.get.return_value
         mock_response.status_code = 200

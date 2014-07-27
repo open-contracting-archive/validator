@@ -15,9 +15,6 @@ class TextFormValidatorView(FormView):
     def form_valid(self, form):
         content = None
 
-        # import pytest
-        # pytest.set_trace()
-
         if self.request.FILES.get('file'):
             content = self.request.FILES['file'].read()
         elif form.cleaned_data.get('url'):
