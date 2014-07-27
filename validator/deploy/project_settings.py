@@ -67,7 +67,7 @@ local_requirements_file = path.join(local_deploy_dir, 'pip_packages.txt')
 #local_requirements_dir = path.join(local_deploy_dir, 'requirements')
 # and the files should be path.join(requirements_dir, '%s.txt' % environment)
 
-test_cmd = ' manage.py test -v ' + ' '.join(django_apps)
+test_cmd = ' manage.py test ' + ' '.join(django_apps)
 
 # django jenkins version - latest might require a too new version of django
 #django_jenkins_version = '0.14.0'  # compatible with Django 1.5
