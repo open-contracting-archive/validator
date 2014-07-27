@@ -29,5 +29,6 @@ pyScss==1.2.0.post3
 cssmin==0.2.0
 argparse==1.2.1
 
-# validator
+# extra libraries
 jsonschema>=2.3.0
+requests>=2.3.0

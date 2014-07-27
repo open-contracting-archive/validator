@@ -18,6 +18,9 @@
         {% elif status == 'input-valid' %}
             <span class="label label-success">Successfully Validated Input JSON</span>
             <p>Input passed all of the schema checks.</p>
+        {% elif status == 'remote-error' %}
+            <span class="label label-error">Error retrieving URL</span>
+            <p>{{ error }}</p>
         {% endif %}
 </div>
 {% endblock %}

@@ -11,7 +11,7 @@ def validate_against_schema(schema_name="release-schema", raw_data=""):
 
     try:
         data = json.loads(raw_data)
-    except ValueError, e:
+    except (TypeError, ValueError), e:
         status = 'input-error'
         error = e
         return status, error
