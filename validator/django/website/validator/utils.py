@@ -1,4 +1,5 @@
 import json
+from py.path import local
 
 from jsonschema.validators import Draft4Validator as validator
 
@@ -7,7 +8,7 @@ def validate_against_schema(schema_name="release-schema", raw_data=""):
     status = 'input-valid'
     error = None
 
-    schema = json.load(open("validator/schemas/%s.json" % schema_name))
+    schema = json.load(open(local(__file__).dirname + '/schemas/%s.json' % schema_name))
 
     try:
         data = json.loads(raw_data)
