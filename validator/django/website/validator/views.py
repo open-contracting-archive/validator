@@ -1,5 +1,11 @@
 # -*- coding: utf-8 -*-
+import gzip
 import requests
+try:
+    from cStringIO import StringIO
+except:
+    from StringIO import StringIO
+
 
 from django.shortcuts import render
 from django.views.generic import FormView
@@ -14,6 +20,7 @@ class TextFormValidatorView(FormView):
 
     def form_valid(self, form):
         content = None
+        status = None
 
         if self.request.FILES.get('file'):
             content = self.request.FILES['file'].read()
@@ -30,7 +37,22 @@ class TextFormValidatorView(FormView):
             content = form.cleaned_data.get('content')
 
         if content:
-            status, error = validate_against_schema(raw_data=content)
+            if (content[0].encode("hex") == '1f'):
+                buf = StringIO()
+                buf.write(content)
+                buf.seek(0)
+
+                f = gzip.GzipFile(mode='rb', fileobj=buf)
+                try:
+                    content = f.read()
+                except IOError, e:
+                    status = 'io-error'
+                    error = e
+                finally:
+                    f.close()
+
+            if not status:
+                status, error = validate_against_schema(raw_data=content)
 
         return render(self.request, "validation_result.html",
                     {"status": status, "error": error})

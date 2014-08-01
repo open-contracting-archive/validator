@@ -64,3 +64,19 @@ def test_form_remote_url_not_found(rf):
         response = view(request)
 
         assert 'Error retrieving URL' in response.content, "Requests didn't fail on remote 404"
+
+
+def test_upload_gzip_file(rf):
+    with open(local(__file__).dirname + '/assets/simple_example.json.gz') as fp:
+        request = rf.post('/', {'file': fp})
+    view = TextFormValidatorView.as_view()
+    response = view(request)
+    assert 'Successfully Validated Input JSON' in response.content, 'Gzipped filed did not validate'
+
+
+def test_upload_gzip_file_partial_file(rf):
+    with open(local(__file__).dirname + '/assets/simple_example_partial_file.json.gz') as fp:
+        request = rf.post('/', {'file': fp})
+    view = TextFormValidatorView.as_view()
+    response = view(request)
+    assert 'Error reading the file' in response.content, 'Broken gzip file didn not fail'

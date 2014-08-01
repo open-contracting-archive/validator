@@ -21,6 +21,9 @@
         {% elif status == 'remote-error' %}
             <span class="label label-error">Error retrieving URL</span>
             <p>{{ error }}</p>
+        {% elif status == 'io-error' %}
+            <span class="label label-error">Error reading the file</span>
+            <pre>{{ error }}</pre>
         {% endif %}
 </div>
 {% endblock %}
