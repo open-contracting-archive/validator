@@ -64,3 +64,17 @@ def test_form_remote_url_not_found(rf):
         response = view(request)
 
         assert 'Error retrieving URL' in response.content, "Requests didn't fail on remote 404"
+
+
+def test_display_release_schema(rf):
+    request = rf.post('/', {'content': open(local(__file__).dirname + '/assets/random_release_example.json').read()})
+    view = TextFormValidatorView.as_view()
+    response = view(request)
+    assert 'release-schema.json' in response.content
+
+
+def test_display_record_schema(rf):
+    request = rf.post('/', {'content': open(local(__file__).dirname + '/assets/random_record_example.json').read()})
+    view = TextFormValidatorView.as_view()
+    response = view(request)
+    assert 'record-schema.json' in response.content

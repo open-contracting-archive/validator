@@ -1,0 +1,31 @@
+{
+    "publisher": {
+        "name": "kGroe1kjDxMB0JF8vmRfrj6OXIhgD7pbwk5P6THB1b",
+        "scheme": "https://raw.githubusercontent.com/open-contracting/standard/master/standard/schema/record-schema.json",
+        "uid": "qlZPstLJLLvihcHvq8sS7gtAzXElnL4EFxAHVBTlUMh2FtP7LZ3O9FCdOqFCSWnMWWgJ1UwWUPK3rzwKJAmHTqd5tmeq6PBHhHa1UigxZGSrEl34P52P0YLD61HJFzTltTQ32jMCN7aslNDnNOoKr98yUnfhNBjk98WroflcIx9dSUY4fNrEPq1NCb8KvoKuhyHNV9eNRcEhKQMS68rEXBf7JFqYkiDF2ErHy89lkJp3uB2mcp5UmKlmIF5",
+        "uri": "H3ZIBzK6KZHN2VaETzZYVcN4I9YlIICu35s8WqpoS403q3EvN2jH65ek75mMCHEDTSaXVSW4PiOUoxdTKrcuME5fNriWkhWRoaANPChix5w2vL0sIa4QzTz3fUOfXut9wVB0gOJ0QniOpAdMxxVw0gLeSi7sbgQQSP2G0k2WtkUh4NVmkA2PkwPP9xlsj0rMno3rhwsDRstARLMs3Mh5G8c9NPnvft40ggvt6g00cGjBSu2Z7LgfALBpQCjB",
+        "5eTYck7l3h1QObjZNFC3LnKYjFWyt6oaXpfx2NzrQEXBCIMUcB5uX1irh0vDqm2SGAvYCO8AbRP2QOymbJPYX3vKTOwKL12OYvSqcQSjukyFij0bl9YlPqIXSClhFuRKCyIcFJRdMcGrkMcs": -1734001497
+    },
+    "publishingMeta": {
+        "date": "NHKURkbs1MUf2K3m0Fn816hcLXGdxKEqnOiS7BD1k6mVrmV6wxUpFJBWEk9JQzmLqPtUdYyyYQGqXxdzT1FsT9TVyFlLjUwg88p7opIFJHNw5O6iLpGsDnCNuka2JxCSj7iGhtZjVy3gd0hLdlRPd0PY26jMwLHAEn65tuu0mr4LzBUH6dUM5f5825NfuZmLqU7FAmurbQui",
+        "9Yp3qk9AD7kH5PvpsEIfdusrqtShgdFFsuMfNlIUuUcMCnaZ3jD8FxQURBuJrqcs20IjqOauw7nqZnH1JkwzuPeENQOs6OliUAkGWKTY497manoy1iwxuDwIIK3ETPdV9HOnQaSxOSshHzdj4cLkU": null
+    },
+    "records": [
+        {
+            "ocid": "CO8AtBOGvRtbRfM6LjeEZ5k8PmxRcuvoMnxFfv9rADHtBtsacgSZFCeBr7mlhHwZ1E4HmncATbeBiqSWo3QOeT6WecmdEiBLtBC81Zqq4jH0jQyJYHd2MsIO2zqVHMZvpNOIdFuxstJDfEgnflaRyC9J2x1hs8bB4OzSoeeXYBBkPLjSC2B27URnbA",
+            "name": "Phav0ouLnFGJdeCpToEG7lDuesHNFVGRgxNvLq8E5skfcMlAnjCHyn2ZFT8iYCMTTo5OLz2BgBWDX2WO9TSnLLZvjyr5dGbI9CbeHQ3X14bEFPIG64KB9Pb0ukPF5ZF3",
+            "releases": "evhgrB4Nn1gJmrzo971ZQfelpjbi9xa2dSMPaheCiP4iUPC5tdacCtQLsyApULGZaYdqJobpCOm6rsZuql6aARZNzRPhuSM60E99x6w9enZv0UVJSKxcqtddQeDHpxBI4CRdP7t12waTVIE13VGlTkIlC0VRjLEEaYTbklO4hCnTjC3CpEXrZGwI6LGbWTryXGsVlBCqzgWZTwIg7yOo0JLbl2jak9ZFSLwNzrQkoxYAl5",
+            "compiledRecord": {
+                "date": -158136058,
+                "compiledRecord": {
+                    "mGuosvsf5qyHhPKyaeKfOQz9qWZyMB7yMFzYhkrB8ogMjcoh1uupzDPdqSGh04EbImUlaNDUH9TRveZfCA2EcJbJALOhlHrZsch1XCAfvGoWLsVwU9hS8BXHvnBxRaZWOA7Czz3QA2ROePYhkabAIirvFtnmClyd41ppM4F2nE5v3ro8aa7VHujULuzaPTGr5cfVTr4Pk60TIbJ13cyU8OjYOH4Co8NkkRe": {
+                        "uul8DXjiCnMGMeIA1dLK9fItACiEr6UoRK6cuPtlO5hVPj0RFVZxmnlDQvU216kpvgBpsL6Nzu77Z35t64P9xjaHPUOOmM0wn5w7XEPAgXQbRttcnsCz7MDndZMCSvrX8kQk0F2spfkNFkS8qNOwzM83E2dV7Hnn": null
+                    }
+                },
+                "mE8JHPvgCwwDTI0dUd3aPUAD140ogmy91naRfVAqDdPmK0AikIM3mbXsC7bG8cxCna2lELCe1Q3GOeb4bpPbqv944iEvzsFvfvzahAulscQW76Rfc4JzX6Muzxu4ToeWV18wkWmSDC8SRF7zLdwqiiWSoKcIrZWVwBZMZtND1fEU1rxhOQfPLJm8gphzd5LKSHXBXxYgTeFsN7ArI1Yb6nSv1Dcw": -171544420.9
+            },
+            "zmlrgO0gcuIqGlqNneOrsFW6v6WAsblaye5ob2qfGLeF4pExtJtgxAAgTvkdbloWYUKp365PafjxvdAJOnF74LJpP0GRi7N5H7uYT86Kfs8Se717MTl7JIj544corbQqAfcOEYxzTGUIx4sZxFcJQBAcu94s4H2mGptYcMDMxbcGEpn6tCHgVMvVLe2Fq7X88MGPNXnDsiC1d8ba14rSkE7fenLX7HXYQs9QDWoDjHASbKIa3L": -28496030
+        }
+    ],
+    "eR15KhzmEeUoWfEWPQvmps3sV5pOGhwIwzvD7dCSRxShSwVoh9gQM7p1DX8plW9InDMzEFiAKoFRnB8pJedDf7WM3viF7r4AOGXG0FiEouRG3IRRML63vbmWaBwvlQCAsxhlPUE1ce9Y6Qk0pCd19NI0ykTdciaczz5lolCnzMCryvcfYpCYAbh5zZg8axLlFjLniE2hleZhCCDVlu9oonLDv0fz5p0uSkOrG1Rm7W0A4ro2DmKReXHd6sVV4H": "1Xm9bdot7TKFHuve4Qz0hqJMXap6G2WbvcyKsdfymNYWcrds3eCVZsbhyVPAh94Ru6t5H9SSWcsEnqtO7idaqyKPovw18fcX7EGmG3o79FJsLFG05zIjXrS94mDJDv"
+}
