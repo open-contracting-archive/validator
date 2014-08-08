@@ -30,7 +30,7 @@ class TextFormValidatorView(FormView):
             content = form.cleaned_data.get('content')
 
         if content:
-            status, error = validate_against_schema(raw_data=content)
+            status, error, schema = validate_against_schema(raw_data=content)
 
         return render(self.request, "validation_result.html",
-                    {"status": status, "error": error})
+                    {"status": status, "error": error, "schema": schema})

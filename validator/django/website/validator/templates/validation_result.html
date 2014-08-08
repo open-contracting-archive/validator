@@ -3,6 +3,7 @@
 {% block content %}
 <div class="row">
     <h1>Validation results</h1>
+    <p>Validating against <a href="{{ schema.id }}">{{ schema.description }}</a></p>
     <h2>Status</h2>
         {% if status == 'validation-error' %}
             <span class="label label-error">Validation Error</span>
