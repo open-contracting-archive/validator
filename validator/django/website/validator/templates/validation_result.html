@@ -6,22 +6,25 @@
     <p>Validating against <a href="{{ schema.id }}">{{ schema.description }}</a></p>
     <h2>Status</h2>
         {% if status == 'validation-error' %}
-            <span class="label label-error">Validation Error</span>
+            <p><span class="label label-danger">Validation Error</span></p>
             <p>Validation error(s):</p>
             {% for e in error %}
                 <pre>{{ e.message }}</pre>
             {% endfor %}
             <p>(showing only first 100)</p>
         {% elif status == 'input-error' %}
-            <span class="label label-error">Input Error</span>
+            <p><span class="label label-danger">Input Error</span></p>
             <p>Invalid JSON Input:</p>
             <pre>{{ error }}</pre>
         {% elif status == 'input-valid' %}
-            <span class="label label-success">Successfully Validated Input JSON</span>
+            <p><span class="label label-success">Successfully Validated Input JSON</span></p>
             <p>Input passed all of the schema checks.</p>
         {% elif status == 'remote-error' %}
-            <span class="label label-error">Error retrieving URL</span>
+            <p><span class="label label-danger">Error retrieving URL</span></p>
             <p>{{ error }}</p>
+        {% elif status == 'io-error' %}
+            <p><span class="label label-danger">Error reading the file</span></p>
+            <pre>{{ error }}</pre>
         {% endif %}
 </div>
 {% endblock %}

@@ -78,3 +78,19 @@ def test_display_record_schema(rf):
     view = TextFormValidatorView.as_view()
     response = view(request)
     assert 'record-schema.json' in response.content
+
+
+def test_upload_gzip_file(rf):
+    with open(local(__file__).dirname + '/assets/simple_example.json.gz') as fp:
+        request = rf.post('/', {'file': fp})
+    view = TextFormValidatorView.as_view()
+    response = view(request)
+    assert 'Successfully Validated Input JSON' in response.content, 'Gzipped filed did not validate'
+
+
+def test_upload_gzip_file_partial_file(rf):
+    with open(local(__file__).dirname + '/assets/simple_example_partial_file.json.gz') as fp:
+        request = rf.post('/', {'file': fp})
+    view = TextFormValidatorView.as_view()
+    response = view(request)
+    assert 'Error reading the file' in response.content, 'Broken gzip file did not fail'
