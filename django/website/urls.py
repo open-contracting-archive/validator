@@ -3,6 +3,7 @@ from django.views.generic.base import RedirectView
 
 from django.contrib import admin
 from django.conf import settings
+from django.views.generic import RedirectView
 admin.autodiscover()
 
 from validator.views import TextFormValidatorView
@@ -10,6 +11,7 @@ from validator.views import TextFormValidatorView
 urlpatterns = patterns('',
     # Examples:
     # url(r'^myapp/', include('myapp.urls')),
+    url(r'^$', RedirectView.as_view(pattern_name='home')),
     url(r'^validate/', TextFormValidatorView.as_view(), name='home'),
 
     # Uncomment the admin/doc line below to enable admin documentation:
