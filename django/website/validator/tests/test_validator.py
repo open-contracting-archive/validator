@@ -36,19 +36,13 @@ def test_input_invalid_json_multiple_errors():
     assert len(error) == 3, 'Validator returned incorrect number of errors'
 
 
-def test_input_release_schema():
-    raw_data = open(local(__file__).dirname + '/assets/random_release_example.json').read()
+def test_fallback_to_release_schema():
+    raw_data = "{}"
     status, error, schema = validate_against_schema(raw_data=raw_data)
-    assert 'release-schema.json' in schema.get('id')
+    assert 'release-package-schema.json' in schema.get('id')
 
 
 def test_input_record_schema():
-    raw_data = open(local(__file__).dirname + '/assets/random_record_example.json').read()
-    status, error, schema = validate_against_schema(raw_data=raw_data)
-    assert 'record-schema.json' in schema.get('id')
-
-
-def test_fallback_to_release_schema():
-    raw_data = open(local(__file__).dirname + '/assets/invalid_missing_publisher.json').read()
-    status, error, schema = validate_against_schema(raw_data=raw_data)
-    assert 'release-schema.json' in schema.get('id')
+    raw_data = "{}"
+    status, error, schema = validate_against_schema(raw_data=raw_data, schema_name='record-package-schema')
+    assert 'record-package-schema.json' in schema.get('id')

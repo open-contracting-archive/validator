@@ -1,19 +1,12 @@
 {
+    "$schema": "https://raw.githubusercontent.com/open-contracting/standard/master/standard/schema/release-package-schema.json",
     "publisher": {
         "name": "FKepM3HYYph0FzwxfuS7",
-        "scheme": "https://raw.githubusercontent.com/open-contracting/standard/master/standard/schema/release-schema.json",
         "uid": "UAIzEIZ3soskRBoebSXv",
         "uri": "X0MbEs6TNn9H5klGR0Q71uAMBRIM1TcLbgCAtzsPthJ",
         "Pk135q03a9U3nEXJS2NUwUR0ikeuh4z15DWFYYJ57mryjP3beWi39iuoKhvnMCTBcvcX32DyukC9ooGszrtR7Get6TakL9dvOHnLurCXOcML5FQcP7AS4dSM408V4zuX6NREXDN5UCZSUPaSfW2RbY00YV01zbtxJVqa9GVf3kZDsHVreHHgGvSFxkt9hSOhrbfWkpgn5ATC8rfXXUSIxs8bTbBpySc53g": null
     },
-    "publishingMeta": {
-        "date": "wB3QlGtQWysNpp9L",
-        "lEThBlB21pIm2lNcFC15rdoR8MF8OxPCGkIi4wnBiJoY27DYOj35D4q5eMUxovoAFWWT34tx1vJltahQghkzOo79rOou7eCWTrtB9Dp8oPZaM8btx3DeGc9N73OGiL5VzrEXan7jiTvOXS2rEGeWHNL1qUrzytxFe8Nc5jrtFOJhEYuIrV1SmKCRgK": {
-            "KVh4J": {
-                "pfGtAY1uqO2kfOl3PLF5WnHy8Ft92uXcy2WxcMXAq2wgVuZdYEKbQ2aPEbgx3uc5hnQLgkouma2HsztiTwpSVS5cengXy8LgfdPGWjyd": null
-            }
-        }
-    },
+    "publishedDate": "wB3QlGtQWysNpp9L",
     "releases": [
         {
             "releaseMeta": {

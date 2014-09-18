@@ -8,19 +8,19 @@ from validator.views import TextFormValidatorView
 
 @pytest.mark.client
 def test_form_text_input(rf, client):
-    response = client.post('/', {'content': '{"data": []}'})
-    assert 'Validation results' in response.content, "Form didn't validate"
+    response = client.post('/', {'content': '{"data": []}', 'schema': 'release-package-schema'})
+    assert 'Results' in response.content
 
 
 def test_form_invalid_json(rf):
-    request = rf.post('/', {'content': '{invalid json;'})
+    request = rf.post('/', {'content': '{invalid json;', 'schema': 'release-package-schema'})
     view = TextFormValidatorView.as_view()
     response = view(request)
     assert 'Invalid JSON Input' in response.content, "Form didn't raise invalid JSON error"
 
 
 def test_form_valid_input(rf):
-    request = rf.post('/', {'content': open(local(__file__).dirname + '/assets/simple_example.json').read()})
+    request = rf.post('/', {'content': open(local(__file__).dirname + '/assets/simple_example.json').read(), 'schema': 'release-package-schema'})
     view = TextFormValidatorView.as_view()
     response = view(request)
     assert 'Successfully Validated Input JSON' in response.content
@@ -28,7 +28,7 @@ def test_form_valid_input(rf):
 
 def test_form_upload_file(rf):
     with open(local(__file__).dirname + '/assets/simple_example.json') as fp:
-        request = rf.post('/', {'file': fp})
+        request = rf.post('/', {'file': fp, 'schema': 'release-package-schema'})
     view = TextFormValidatorView.as_view()
     response = view(request)
     assert 'Successfully Validated Input JSON' in response.content
@@ -40,7 +40,7 @@ def test_form_remote_url_success(rf):
         mock_response.status_code = 200
         mock_response.content = '{{{'
 
-        request = rf.post('/', {'url': 'http://data.example.com/invalid.json'})
+        request = rf.post('/', {'url': 'http://data.example.com/invalid.json', 'schema': 'release-package-schema'})
 
         view = TextFormValidatorView.as_view()
         response = view(request)
@@ -58,7 +58,7 @@ def test_form_remote_url_not_found(rf):
         mock_response.reason = '404 Client Error: File not found'
         mock_response.content = None
 
-        request = rf.post('/', {'url': 'http://data.example.com/404.json'})
+        request = rf.post('/', {'url': 'http://data.example.com/404.json', 'schema': 'release-package-schema'})
 
         view = TextFormValidatorView.as_view()
         response = view(request)
@@ -67,22 +67,22 @@ def test_form_remote_url_not_found(rf):
 
 
 def test_display_release_schema(rf):
-    request = rf.post('/', {'content': open(local(__file__).dirname + '/assets/random_release_example.json').read()})
+    request = rf.post('/', {'content': open(local(__file__).dirname + '/assets/random_release_example.json').read(), 'schema': 'release-package-schema'})
     view = TextFormValidatorView.as_view()
     response = view(request)
-    assert 'release-schema.json' in response.content
+    assert 'release-package-schema.json' in response.content
 
 
 def test_display_record_schema(rf):
-    request = rf.post('/', {'content': open(local(__file__).dirname + '/assets/random_record_example.json').read()})
+    request = rf.post('/', {'content': open(local(__file__).dirname + '/assets/random_record_example.json').read(), 'schema': 'record-package-schema'})
     view = TextFormValidatorView.as_view()
     response = view(request)
-    assert 'record-schema.json' in response.content
+    assert 'record-package-schema.json' in response.content
 
 
 def test_upload_gzip_file(rf):
     with open(local(__file__).dirname + '/assets/simple_example.json.gz') as fp:
-        request = rf.post('/', {'file': fp})
+        request = rf.post('/', {'file': fp, 'schema': 'release-package-schema'})
     view = TextFormValidatorView.as_view()
     response = view(request)
     assert 'Successfully Validated Input JSON' in response.content, 'Gzipped filed did not validate'
@@ -90,7 +90,7 @@ def test_upload_gzip_file(rf):
 
 def test_upload_gzip_file_partial_file(rf):
     with open(local(__file__).dirname + '/assets/simple_example_partial_file.json.gz') as fp:
-        request = rf.post('/', {'file': fp})
+        request = rf.post('/', {'file': fp, 'schema': 'release-package-schema'})
     view = TextFormValidatorView.as_view()
     response = view(request)
     assert 'Error reading the file' in response.content, 'Broken gzip file did not fail'

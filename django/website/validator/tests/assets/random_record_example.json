@@ -1,15 +1,12 @@
 {
+    "$schema": "https://raw.githubusercontent.com/open-contracting/standard/master/standard/schema/record-package-schema.json",
     "publisher": {
         "name": "kGroe1kjDxMB0JF8vmRfrj6OXIhgD7pbwk5P6THB1b",
-        "scheme": "https://raw.githubusercontent.com/open-contracting/standard/master/standard/schema/record-schema.json",
         "uid": "qlZPstLJLLvihcHvq8sS7gtAzXElnL4EFxAHVBTlUMh2FtP7LZ3O9FCdOqFCSWnMWWgJ1UwWUPK3rzwKJAmHTqd5tmeq6PBHhHa1UigxZGSrEl34P52P0YLD61HJFzTltTQ32jMCN7aslNDnNOoKr98yUnfhNBjk98WroflcIx9dSUY4fNrEPq1NCb8KvoKuhyHNV9eNRcEhKQMS68rEXBf7JFqYkiDF2ErHy89lkJp3uB2mcp5UmKlmIF5",
         "uri": "H3ZIBzK6KZHN2VaETzZYVcN4I9YlIICu35s8WqpoS403q3EvN2jH65ek75mMCHEDTSaXVSW4PiOUoxdTKrcuME5fNriWkhWRoaANPChix5w2vL0sIa4QzTz3fUOfXut9wVB0gOJ0QniOpAdMxxVw0gLeSi7sbgQQSP2G0k2WtkUh4NVmkA2PkwPP9xlsj0rMno3rhwsDRstARLMs3Mh5G8c9NPnvft40ggvt6g00cGjBSu2Z7LgfALBpQCjB",
         "5eTYck7l3h1QObjZNFC3LnKYjFWyt6oaXpfx2NzrQEXBCIMUcB5uX1irh0vDqm2SGAvYCO8AbRP2QOymbJPYX3vKTOwKL12OYvSqcQSjukyFij0bl9YlPqIXSClhFuRKCyIcFJRdMcGrkMcs": -1734001497
     },
-    "publishingMeta": {
-        "date": "NHKURkbs1MUf2K3m0Fn816hcLXGdxKEqnOiS7BD1k6mVrmV6wxUpFJBWEk9JQzmLqPtUdYyyYQGqXxdzT1FsT9TVyFlLjUwg88p7opIFJHNw5O6iLpGsDnCNuka2JxCSj7iGhtZjVy3gd0hLdlRPd0PY26jMwLHAEn65tuu0mr4LzBUH6dUM5f5825NfuZmLqU7FAmurbQui",
-        "9Yp3qk9AD7kH5PvpsEIfdusrqtShgdFFsuMfNlIUuUcMCnaZ3jD8FxQURBuJrqcs20IjqOauw7nqZnH1JkwzuPeENQOs6OliUAkGWKTY497manoy1iwxuDwIIK3ETPdV9HOnQaSxOSshHzdj4cLkU": null
-    },
+    "publishedDate": "NHKURkbs1MUf2K3m0Fn816hcLXGdxKEqnOiS7BD1k6mVrmV6wxUpFJBWEk9JQzmLqPtUdYyyYQGqXxdzT1FsT9TVyFlLjUwg88p7opIFJHNw5O6iLpGsDnCNuka2JxCSj7iGhtZjVy3gd0hLdlRPd0PY26jMwLHAEn65tuu0mr4LzBUH6dUM5f5825NfuZmLqU7FAmurbQui",
     "records": [
         {
             "ocid": "CO8AtBOGvRtbRfM6LjeEZ5k8PmxRcuvoMnxFfv9rADHtBtsacgSZFCeBr7mlhHwZ1E4HmncATbeBiqSWo3QOeT6WecmdEiBLtBC81Zqq4jH0jQyJYHd2MsIO2zqVHMZvpNOIdFuxstJDfEgnflaRyC9J2x1hs8bB4OzSoeeXYBBkPLjSC2B27URnbA",

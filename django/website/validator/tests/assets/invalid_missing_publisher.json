@@ -1,109 +1,99 @@
 {
+    "$schema": "https://raw.githubusercontent.com/open-contracting/standard/master/standard/schema/release-package-schema.json",
+    "publishedDate": "2014-07-26", 
+    "uri": "https://github.com/open-contracting/sample-data/blob/master/buyandsell/ocds_data/award_releases.json.zip", 
+    "license": "http://data.gc.ca/eng/open-government-licence-canada", 
     "releases": [
         {
-            "releaseMeta": {
-                "locale": "English",
-                "ocid": "PW-$KIN-650-6155"
-            }
-        },
-        {
-            "releaseMeta": {
-                "locale": "French",
-                "ocid": "PW-$KIN-650-6155"
-            }
-        },
-        {
-            "releaseMeta": {
-                "locale": "English",
-                "ocid": "PW-$VIC-242-6289"
-            }
-        },
-        {
-            "releaseMeta": {
-                "locale": "French",
-                "ocid": "PW-$VIC-242-6289"
-            }
-        },
-        {
-            "releaseMeta": {
-                "locale": "English",
-                "ocid": "PW-$$XL-122-26346"
-            }
-        },
-        {
-            "releaseMeta": {
-                "locale": "French",
-                "ocid": "PW-$$XL-122-26346"
-            }
-        },
-        {
-            "releaseMeta": {
-                "locale": "English",
-                "ocid": "PW-$$ZL-106-26343"
-            }
-        },
-        {
-            "releaseMeta": {
-                "locale": "French",
-                "ocid": "PW-$$ZL-106-26343"
-            }
-        },
-        {
-            "releaseMeta": {
-                "locale": "English",
-                "ocid": "PW-13-00384952"
-            }
-        },
-        {
-            "releaseMeta": {
-                "locale": "French",
-                "ocid": "PW-13-00384952"
-            }
-        },
-        {
-            "releaseMeta": {
-                "locale": "English",
-                "ocid": "PW-13-00360880"
-            }
-        },
-        {
-            "releaseMeta": {
-                "locale": "French",
-                "ocid": "PW-13-00360880"
-            }
-        },
-        {
-            "releaseMeta": {
-                "locale": "English",
-                "ocid": "PW-13-00495607"
-            }
-        },
-        {
-            "releaseMeta": {
-                "locale": "French",
-                "ocid": "PW-13-00495607"
-            }
-        },
-        {
-            "releaseMeta": {
-                "locale": "English",
-                "ocid": "PW-$$EJ-436-26154"
-            }
-        },
-        {
-            "releaseMeta": {
-                "locale": "French",
-                "ocid": "PW-$$EJ-436-26154"
-            }
-        },
-        {
-            "releaseMeta": {
-                "locale": "English",
-                "ocid": "PW-$$HL-653-63222"
+            "releaseTag": "awardNotice", 
+            "language": "English", 
+            "releaseID": "Buyandsell.gc.ca-20140917-d4502bf9-2993-4d91-9171-d2cfe841d0af", 
+            "formationType": "tender", 
+            "ocid": "PW-$$ZP-001-24893", 
+            "releaseDate": "2014-07-26", 
+            "buyer": {
+                "id": {
+                    "uid": null, 
+                    "scheme": null, 
+                    "name": "PUBLIC WORKS AND GOVERNMENT SERVICES CANADA\nCREMAZIE BLDG 11TH FL\n70 CREMAZIE ST\nGATINEAU\nQC\nK1A0S5\nCAN", 
+                    "uri": null
+                }
+            }, 
+            "awards": [
+                {
+                    "itemsAwarded": [
+                        {
+                            "unitOfMeasure": null, 
+                            "description": "Translation Services (EN949-12T013/001/ZP)", 
+                            "valuePerUnit": {
+                                "currency": null, 
+                                "amount": null
+                            }, 
+                            "classificationID": null, 
+                            "classificationScheme": "GSIN", 
+                            "classificationDescription": "R109D: Translation Services\n", 
+                            "otherClassificationScheme": null, 
+                            "quantity": null
+                        }
+                    ], 
+                    "notice": {
+                        "amendment": {
+                            "amendmentDate": "None", 
+                            "justification": null, 
+                            "amendedFields": null
+                        }, 
+                        "isAmendment": null, 
+                        "uri": null, 
+                        "id": "EN949-12T013/001/ZP", 
+                        "publishedDate": "2012-09-11"
+                    }, 
+                    "suppliers": [
+                        {
+                            "id": {
+                                "uid": null, 
+                                "scheme": null, 
+                                "name": "Syntagme inc.\n385, boul. Saint-Joseph Ouest\nMontréal\nQuebec\nH2V2P1\nCanada", 
+                                "uri": null
+                            }, 
+                            "address": {
+                                "locality": null, 
+                                "region": null, 
+                                "extended-address": null, 
+                                "post-office-box": null, 
+                                "street-address": null, 
+                                "postal-code": null, 
+                                "country-name": null
+                            }
+                        }
+                    ], 
+                    "awardValue": {
+                        "currency": "CAD", 
+                        "amount": 236670.0
+                    }, 
+                    "awardDate": "2012-09-07", 
+                    "awardID": "EN949-12T013/001/ZP"
+                }
+            ], 
+            "tender": {
+                "notice": {
+                    "isAmendment": null, 
+                    "uri": null, 
+                    "id": "EN949-12T013", 
+                    "publishedDate": null
+                }, 
+                "methodJustification": null, 
+                "tenderID": "PW-$$ZP-001-24893", 
+                "selectionDetails": null, 
+                "method": null, 
+                "procuringEntity": {
+                    "id": {
+                        "uid": null, 
+                        "scheme": null, 
+                        "name": "Public Works and Government Services Canada", 
+                        "uri": null
+                    }
+                }
             }
         }
-    ],
-    "publishingMeta": {
-        "date": "florianpilz"
-    }
+    ]
 }

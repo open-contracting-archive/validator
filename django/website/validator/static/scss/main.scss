@@ -3,11 +3,14 @@
 	height: 100px;
 }
 
-#id_file {
-	margin-bottom: 28px;
-}
-
 #id_url {
 	width: 100%;
 
+}
+
+#div_id_schema > .controls {
+    margin-left: 20px;
+    > label {
+        font-weight: 100;
+    }   
 }

@@ -3,15 +3,15 @@ import gzip
 import requests
 try:
     from cStringIO import StringIO
-except:
+except ImportError:
     from StringIO import StringIO
 
 
 from django.shortcuts import render
 from django.views.generic import FormView
 
-from forms import TextValidatorForm
-from utils import validate_against_schema
+from .forms import TextValidatorForm
+from .utils import validate_against_schema
 
 
 class TextFormValidatorView(FormView):
@@ -21,7 +21,7 @@ class TextFormValidatorView(FormView):
     def form_valid(self, form):
         content = None
         status = None
-        schema = None
+        schema = form.cleaned_data.get('schema')
 
         if self.request.FILES.get('file'):
             content = self.request.FILES['file'].read()
@@ -38,7 +38,7 @@ class TextFormValidatorView(FormView):
             content = form.cleaned_data.get('content')
 
         if content:
-            if (content[0].encode("hex") == '1f'):
+            if content[0].encode("hex") == '1f':
                 buf = StringIO()
                 buf.write(content)
                 buf.seek(0)
@@ -53,7 +53,10 @@ class TextFormValidatorView(FormView):
                     f.close()
 
             if not status:
-                status, error, schema = validate_against_schema(raw_data=content)
+                status, error, schema = \
+                    validate_against_schema(schema_name=schema,
+                                            raw_data=content)
 
-        return render(self.request, "validation_result.html",
-                    {"status": status, "error": error, "schema": schema})
+        return render(self.request,
+                      "validation_result.html",
+                      {"status": status, "error": error, "schema": schema})

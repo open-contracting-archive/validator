@@ -3,13 +3,14 @@
 {% block content %}
 <div class="row">
 	<div class="col-sm-12">
-	<h1>About</h1>
-	<p>This is a small web application to provide a front-end interface to validate whether ocds-formatted data is ocds compliant.</p>
-	<p>Submit the data through <strong>File upload</strong>, <strong>External URL</strong> or <strong>Text input</strong>. Only one input type at time will be validated.</p>
+        <h2>About</h2>
+        <p>This is a small web application to provide a front-end interface to validate whether data is compliant to the Open Contracting Data Standard (OCDS). It can validate either a release package or a record package.</p>
+    </div>
 </div>
 
 <div class="row">
 	<div class="col-sm-12">
+        <h2>Validate</h2>
 		{% crispy form %}
 	</div>
 </div>
