@@ -1,33 +1,53 @@
 {% extends "base.html" %}
 
 {% block content %}
+<br /><br />
 <div class="row">
 	<div class="col-sm-12">
-        <p>Return <a href="/">home</a></p>
-        <h2>Results</h2>
-        <p>Validating against <a href="{{ schema.id }}">{{ schema.title }}</a></p>
-        <h2>Status</h2>
-            {% if status == 'validation-error' %}
-                <p><span class="label label-danger">Validation Error</span></p>
-                <p>Validation error(s):</p>
-                {% for e in error %}
-                    <pre>{{ e.message }}</pre>
-                {% endfor %}
-                <p>(showing only first 100)</p>
-            {% elif status == 'input-error' %}
-                <p><span class="label label-danger">Input Error</span></p>
-                <p>Invalid JSON Input:</p>
-                <pre>{{ error }}</pre>
-            {% elif status == 'input-valid' %}
-                <p><span class="label label-success">Successfully Validated Input JSON</span></p>
-                <p>Input passed all of the schema checks.</p>
-            {% elif status == 'remote-error' %}
-                <p><span class="label label-danger">Error retrieving URL</span></p>
-                <p>{{ error }}</p>
-            {% elif status == 'io-error' %}
-                <p><span class="label label-danger">Error reading the file</span></p>
-                <pre>{{ error }}</pre>
-            {% endif %}
+        <div class="panel {% if status == 'input-valid' %}panel-success{% else %}panel-danger{% endif %} ">
+            <div class="panel-heading">
+                <h2 class="panel-title">Results</h2>
+            </div>
+            <div class="panel-body">
+                {% if status != 'input-error' %}
+                <p>Validated against <a href="{{ schema.id }}">{{ schema.title }}</a></p>
+                {% endif %}
+                {% if status == 'validation-error' %}
+                    <p><span class="label label-danger">Validation Error</span></p>
+                    <p>Validation error(s):</p>
+                    {% for e in error %}
+                        <pre>{{ e.message }}</pre>
+                    {% endfor %}
+                    <p>(showing only first 100)</p>
+                {% elif status == 'input-error' %}
+                    <p><span class="label label-danger">Input Error</span></p>
+                    <p>Invalid JSON Input:</p>
+                    <pre>{{ error }}</pre>
+                {% elif status == 'input-valid' %}
+                    <p><span class="label label-success">Successfully Validated Input JSON</span></p>
+                    <p>Input passed all of the schema checks.</p>
+                {% elif status == 'remote-error' %}
+                    <p><span class="label label-danger">Error retrieving URL</span></p>
+                    <p>{{ error }}</p>
+                {% elif status == 'io-error' %}
+                    <p><span class="label label-danger">Error reading the file</span></p>
+                    <pre>{{ error }}</pre>
+                {% endif %}
+            </div>
+        </div>
     </div/>
+</div>
+<div class="row">
+	<div class="col-sm-6">
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                <h4 class="panel-title">Save your results.</h3>
+            </div>
+            <div class="panel-body">
+                <p>You will not be able to access these results again, so please save or print this page to keep these results.</p>
+                <p class="pull-right"><a href="{% url 'home' %}" class="btn btn-default">New validation</a>.</p>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}

@@ -8,7 +8,7 @@ from validator.views import TextFormValidatorView
 
 @pytest.mark.client
 def test_form_text_input(rf, client):
-    response = client.post('/', {'content': '{"data": []}', 'schema': 'release-package-schema'})
+    response = client.post('/validate/', {'content': '{"data": []}', 'schema': 'release-package-schema'})
     assert 'Results' in response.content
 
 
