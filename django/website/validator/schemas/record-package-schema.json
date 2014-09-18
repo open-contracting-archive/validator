@@ -1,0 +1,113 @@
+{
+	"id": "https://raw.githubusercontent.com/open-contracting/standard/master/standard/schema/record-package-schema.json",
+	"$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Schema for an Open Contracting Record package",
+	"description": "The record package contains a list of records along with some publishing meta data. The records pull together all the releases under a single Open Contracting ID and compile them into the latest version of the information along with the history of any data changes.",
+	"type": "object",
+	"properties": {
+        "uri": {
+            "title": "Package Identifier",
+            "description": "The URI of this package that identifies it uniquely in the world.",
+            "type": "string",
+            "format": "uri"
+        },
+		"publisher": { 
+            "description": "Information to uniquely identify the publisher of this package.",
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string"
+				},
+                "scheme": {
+                    "description": "The scheme that holds the unique identifiers used to identify the item being identified.",
+                    "type": ["string", "null"],
+                    "format": "uri"
+                },
+                "uid": {
+                    "description": "The unique ID for this entity under the given ID scheme.",
+                    "type": ["string", "null"]
+                },
+				"uri": {
+					"type": ["string", "null"],
+					"format" : "uri"
+				}
+			},
+			"required": ["name"]
+        },
+        "license": {
+            "description": "A license document that applies to this content.",
+            "type": ["string", "null"],
+            "format": "uri"
+        },
+        "publishedDate": {
+            "description": "The date that this package was published. Ideally this should be the latest date that there is release information in this package.",
+            "type": "string",
+            "format": "date-time"
+        },
+        "packages": {
+            "description": "A list of URIs of all the release packages that were used to create this record package.",
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "type": "string",
+                "format": "uri"
+            },
+            "uniqueItems": true
+        },
+		"records": {
+            "description": "The records for this data package.",
+			"type": "array",
+			"minItems": 1,
+			"items": { "$ref": "#/definitions/record" },
+			"uniqueItems": true
+        }
+    },
+    "required": ["uri", "publisher, publishedDate, packages, records"],
+	"definitions": {
+        "record": {
+            "type": "object",
+            "properties": {
+                "ocid": {
+                    "title": "Open Contracting ID",
+                    "description": "A unique identifier that identifies the unique Open Contracting Process. For more information see: http://ocds.open-contracting.org/standard/r/0__2__0/#defining-a-unique-contracting-process",
+                    "type": "string"
+                },
+                "releases": {
+                    "description": "An array of linking identifiers or releases",
+                    "oneOf": [
+                        {
+                            "title": "Linked releases",
+                            "description": "A list of uri's that identify the releases associated with this Open Contracting ID. The URI is composed of the uri for the release-package and the releaseID e.g. http://publisher.gov/release-package.json#releaseID1",
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "format": "uri"
+                            },
+                            "minItems": 1
+                        },
+                        {
+                            "title": "Embedded releases",
+                            "description": "A list of releases, with all the data",
+                            "type": "array",
+                            "items": {
+                                "$ref": "http://ocds.open-contracting.org/standard/r/standard/release-schema.json"
+                            },
+                            "minItems": 1
+                        }
+                    ]
+                },
+                "compiledRelease": {
+                    "title": "Compiled release",
+                    "description": "This is the latest version of all the contracting data, it has the same schema as an open contracting release.",
+                    "$ref": "http://ocds.open-contracting.org/standard/r/standard/release-schema.json"
+                },
+                "versionedRelease": {
+                    "title": "Versioned release",
+                    "description": "This contains the history of the data in the compiledRecord. With all versions of the information and the release they came from.",
+                    "$ref": "http://ocds.open-contracting.org/standard/r/master/versioned-release-validation-schema.json"
+                }
+            },
+            "required": ["ocid", "name", "releases", "compiledRelease", "versionedRelease"]
+        }
+    }
+}
