@@ -74,7 +74,7 @@ MEDIA_ROOT = path.join(BASE_DIR, 'uploads')
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#media-url
-MEDIA_URL = 'validator/uploads/'
+MEDIA_URL = '/validator/uploads/'
 ########## END MEDIA CONFIGURATION
 
 
@@ -87,7 +87,7 @@ STATIC_ROOT = path.join(BASE_DIR, 'static')
 
 # URL prefix for static files.
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-url
-STATIC_URL = 'validator/static/'
+STATIC_URL = '/validator/static/'
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
 STATICFILES_DIRS = (

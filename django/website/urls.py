@@ -10,7 +10,7 @@ from validator.views import TextFormValidatorView
 urlpatterns = patterns('',
     # Examples:
     # url(r'^myapp/', include('myapp.urls')),
-    url(r'^$', TextFormValidatorView.as_view(), name='home'),
+    url(r'^validate/', TextFormValidatorView.as_view(), name='home'),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
