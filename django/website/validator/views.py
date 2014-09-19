@@ -21,13 +21,18 @@ class TextFormValidatorView(FormView):
     def form_valid(self, form):
         content = None
         status = None
+        item_name = None
         schema = form.cleaned_data.get('schema')
+        uploaded_file = self.request.FILES.get('file')
 
-        if self.request.FILES.get('file'):
-            content = self.request.FILES['file'].read()
+        if uploaded_file:
+            content = uploaded_file.read()
+            item_name = uploaded_file.name
+
         elif form.cleaned_data.get('url'):
             try:
                 r = requests.get(form.cleaned_data.get('url'))
+                item_name = r
 
                 r.raise_for_status()
                 content = r.content
@@ -36,6 +41,7 @@ class TextFormValidatorView(FormView):
                 error = e
         else:
             content = form.cleaned_data.get('content')
+            item_name = "entered content"
 
         if content:
             if content[0].encode("hex") == '1f':
@@ -57,6 +63,11 @@ class TextFormValidatorView(FormView):
                     validate_against_schema(schema_name=schema,
                                             raw_data=content)
 
-        return render(self.request,
-                      "validation_result.html",
-                      {"status": status, "error": error, "schema": schema})
+        return render(
+            self.request,
+            "validation_result.html",
+            {"status": status,
+             "error": error,
+             "schema": schema,
+             "item_name": item_name}
+        )
