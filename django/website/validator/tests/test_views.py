@@ -23,7 +23,7 @@ def test_form_valid_input(rf):
     request = rf.post('/', {'content': open(local(__file__).dirname + '/assets/simple_example.json').read(), 'schema': 'release-package-schema'})
     view = TextFormValidatorView.as_view()
     response = view(request)
-    assert 'Successfully Validated Input JSON' in response.content
+    assert 'Success!' in response.content
 
 
 def test_form_upload_file(rf):
@@ -31,7 +31,7 @@ def test_form_upload_file(rf):
         request = rf.post('/', {'file': fp, 'schema': 'release-package-schema'})
     view = TextFormValidatorView.as_view()
     response = view(request)
-    assert 'Successfully Validated Input JSON' in response.content
+    assert 'Success!' in response.content
 
 
 def test_form_remote_url_success(rf):
@@ -85,7 +85,7 @@ def test_upload_gzip_file(rf):
         request = rf.post('/', {'file': fp, 'schema': 'release-package-schema'})
     view = TextFormValidatorView.as_view()
     response = view(request)
-    assert 'Successfully Validated Input JSON' in response.content, 'Gzipped filed did not validate'
+    assert 'Success!' in response.content, 'Gzipped filed did not validate'
 
 
 def test_upload_gzip_file_partial_file(rf):
