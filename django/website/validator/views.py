@@ -24,15 +24,16 @@ class TextFormValidatorView(FormView):
         item_name = None
         schema = form.cleaned_data.get('schema')
         uploaded_file = self.request.FILES.get('file')
+        url = form.cleaned_data.get('url')
 
         if uploaded_file:
             content = uploaded_file.read()
             item_name = uploaded_file.name
 
-        elif form.cleaned_data.get('url'):
+        elif url:
             try:
-                r = requests.get(form.cleaned_data.get('url'))
-                item_name = r
+                r = requests.get(url)
+                item_name = url
 
                 r.raise_for_status()
                 content = r.content
