@@ -30,7 +30,7 @@ def test_input_invalid_json():
 
 
 def test_input_invalid_json_multiple_errors():
-    raw_data = open(local(__file__).dirname + '/assets/invalid_multiple_errors.json').read()
+    raw_data = open(local(__file__).dirname + '/assets/invalid_three_errors.json').read()
     status, error, schema = validate_against_schema(raw_data=raw_data)
     assert status == 'validation-error', 'Validator did not return validation error'
     assert len(error) == 3, 'Validator returned incorrect number of errors'

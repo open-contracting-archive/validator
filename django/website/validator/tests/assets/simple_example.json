@@ -5,20 +5,23 @@
         "uri": "https://buyandsell.gc.ca", 
         "uid": null
     }, 
+    "publishedDate": "2014-07-26", 
+    "uri": "https://github.com/open-contracting/sample-data/blob/master/buyandsell/ocds_data/award_releases.json.zip", 
+    "$schema": "https://raw.githubusercontent.com/open-contracting/standard/master/standard/schema/release-package-schema.json",
     "license": "http://data.gc.ca/eng/open-government-licence-canada", 
     "releases": [
         {
-            "releaseTag": "awardNotice", 
+            "tag": ["award"], 
             "language": "English", 
-            "releaseID": "Buyandsell.gc.ca-20140917-d4502bf9-2993-4d91-9171-d2cfe841d0af", 
-            "formationType": "tender", 
+            "id": "Buyandsell.gc.ca-20140917-d4502bf9-2993-4d91-9171-d2cfe841d0af", 
+            "initiationType": "tender", 
             "ocid": "PW-$$ZP-001-24893", 
-            "releaseDate": "2014-07-26", 
+            "date": "2014-07-26", 
             "buyer": {
-                "id": {
-                    "uid": null, 
+                "identifier": {
+                    "id": null, 
                     "scheme": null, 
-                    "name": "PUBLIC WORKS AND GOVERNMENT SERVICES CANADA\nCREMAZIE BLDG 11TH FL\n70 CREMAZIE ST\nGATINEAU\nQC\nK1A0S5\nCAN", 
+                    "legalName": "PUBLIC WORKS AND GOVERNMENT SERVICES CANADA\nCREMAZIE BLDG 11TH FL\n70 CREMAZIE ST\nGATINEAU\nQC\nK1A0S5\nCAN", 
                     "uri": null
                 }
             }, 
@@ -39,21 +42,18 @@
                             "quantity": null
                         }
                     ], 
-                    "notice": {
-                        "amendment": {
-                            "amendmentDate": "None", 
-                            "justification": null, 
-                            "amendedFields": null
-                        }, 
-                        "isAmendment": null, 
-                        "uri": null, 
-                        "id": "EN949-12T013/001/ZP", 
-                        "publishedDate": "2012-09-11"
-                    }, 
+                    "documents": [ 
+                        {
+                            "id": "EN949-12T013/001/ZP", 
+                            "datePublished": "2012-09-11",
+                            "documentType": "notice",
+                            "url": null
+                        }
+                    ], 
                     "suppliers": [
                         {
-                            "id": {
-                                "uid": null, 
+                            "identifier": {
+                                "id": null, 
                                 "scheme": null, 
                                 "name": "Syntagme inc.\n385, boul. Saint-Joseph Ouest\nMontréal\nQuebec\nH2V2P1\nCanada", 
                                 "uri": null
@@ -61,36 +61,31 @@
                             "address": {
                                 "locality": null, 
                                 "region": null, 
-                                "extended-address": null, 
-                                "post-office-box": null, 
-                                "street-address": null, 
-                                "postal-code": null, 
-                                "country-name": null
+                                "streetAddress": null, 
+                                "postalCode": null, 
+                                "countryName": null
                             }
                         }
                     ], 
-                    "awardValue": {
+                    "value": {
                         "currency": "CAD", 
                         "amount": 236670.0
                     }, 
-                    "awardDate": "2012-09-07", 
-                    "awardID": "EN949-12T013/001/ZP"
+                    "date": "2012-09-07", 
+                    "id": "EN949-12T013/001/ZP"
                 }
             ], 
             "tender": {
-                "notice": {
-                    "isAmendment": null, 
-                    "uri": null, 
-                    "id": "EN949-12T013", 
-                    "publishedDate": null
-                }, 
-                "methodJustification": null, 
-                "tenderID": "PW-$$ZP-001-24893", 
-                "selectionDetails": null, 
-                "method": null, 
+                "id": "PW-$$ZP-001-24893", 
+                "documents": [
+                    {
+                        "id": "EN949-12T013", 
+                        "documentType": "notice"
+                    }
+                ], 
                 "procuringEntity": {
-                    "id": {
-                        "uid": null, 
+                    "identifier": {
+                        "id": null, 
                         "scheme": null, 
                         "name": "Public Works and Government Services Canada", 
                         "uri": null
@@ -98,8 +93,5 @@
                 }
             }
         }
-    ], 
-    "publishedDate": "2014-07-26", 
-    "uri": "https://github.com/open-contracting/sample-data/blob/master/buyandsell/ocds_data/award_releases.json.zip", 
-    "$schema": "https://raw.githubusercontent.com/open-contracting/standard/master/standard/schema/release-package-schema.json"
+    ]
 }
