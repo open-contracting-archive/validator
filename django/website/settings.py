@@ -20,6 +20,7 @@ ASSETS_AUTO_BUILD = DEBUG
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 import private_settings
 SECRET_KEY = private_settings.SECRET_KEY
+RAVEN_CONFIG = private_settings.RAVEN_CONFIG
 ########## END SECRET CONFIGURATION
 
 
@@ -135,7 +136,7 @@ THIRD_PARTY_APPS = (
     'registration',
     'django_assets',
     #
-    #
+    'raven.contrib.django.raven_compat',
 )
 
 # Apps specific for this project go here.
@@ -207,38 +208,42 @@ ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 # the site admins on every HTTP 500 error when DEBUG=False.
 # See http://docs.djangoproject.com/en/dev/topics/logging for
 # more details on how to customize your logging configuration.
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'filters': {
-        'require_debug_false': {
-            '()': 'django.utils.log.RequireDebugFalse'
-        }
-    },
-    'handlers': {
-        'mail_admins': {
-            'level': 'ERROR',
-            'filters': ['require_debug_false'],
-            'class': 'django.utils.log.AdminEmailHandler'
-        },
-        'console': {
-            'level': 'DEBUG',
-            'class': 'logging.StreamHandler',
-            # 'formatter': 'simple'
-        },
-    },
-    'loggers': {
-        'django.request': {
-            'handlers': ['mail_admins'],
-            'level': 'ERROR',
-            'propagate': True,
-        },
-        '': {
-            'handlers': ['console'],
-            'level': 'INFO',
-        },
-    }
-}
+#
+# (This is commented out, as we're now using Raven/Sentry instead.)
+
+#
+#LOGGING = {
+#    'version': 1,
+#    'disable_existing_loggers': False,
+#    'filters': {
+#        'require_debug_false': {
+#            '()': 'django.utils.log.RequireDebugFalse'
+#        }
+#    },
+#    'handlers': {
+#        'mail_admins': {
+#            'level': 'ERROR',
+#            'filters': ['require_debug_false'],
+#            'class': 'django.utils.log.AdminEmailHandler'
+#        },
+#        'console': {
+#            'level': 'DEBUG',
+#            'class': 'logging.StreamHandler',
+#            # 'formatter': 'simple'
+#        },
+#    },
+#    'loggers': {
+#        'django.request': {
+#            'handlers': ['mail_admins'],
+#            'level': 'ERROR',
+#            'propagate': True,
+#        },
+#        '': {
+#            'handlers': ['console'],
+#            'level': 'INFO',
+#        },
+#    }
+#}
 ########## END LOGGING CONFIGURATION
 
 
