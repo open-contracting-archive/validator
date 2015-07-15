@@ -2,16 +2,14 @@
 -e git://github.com/aptivate/dye.git@a0d9a27371ed4d94f29dcce4fd62acc930af5eaa#egg=dye
 
 # core django
-Django==1.6.11
+Django==1.8.3
 pytz==2014.4
 MySQL-python==1.2.5
-South==1.0
 
 # custom apps
 django-crispy-forms==1.4.0
 django-extended-choices==0.3.0
 django-recaptcha==0.0.6
-django-registration==1.0
 
 # logging
 raven==5.3.1

@@ -129,11 +129,8 @@ DJANGO_APPS = (
     'django.contrib.admin',
 )
 THIRD_PARTY_APPS = (
-    'south',  # Database migration helpers:
-    #
     'crispy_forms',  # Form layouts
     'django_extensions',
-    'registration',
     'django_assets',
     #
     'raven.contrib.django.raven_compat',
