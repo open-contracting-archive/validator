@@ -1,6 +1,8 @@
 This is a small web application to provide a front-end interface to validate
 whether ocds-formatted data is ocds compliant.
 
+*Note: this was deployed at http://ocds.open-contracting.org/validator but has now been replace by https://github.com/OpenDataServices/cove*
+
 Requirements
 ============
 You will need:
